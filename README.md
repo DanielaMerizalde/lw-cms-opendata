@@ -8,6 +8,18 @@ de un electrón de Lee-Wick, ẽ → e Z, en pp → ẽ⁺ẽ⁻ con Z → jj. L
 Todo el trabajo se hizo con datos y software públicos: CMS Open Data 2012, CMSSW_5_3_32 en Docker,
 FeynRules, MadGraph5_aMC@NLO 3.8.1 y Pythia 8.
 
+## Flujo agéntico
+
+El proyecto está organizado para ejecutarse con agentes de Claude Code. Un coordinador reparte cada etapa
+entre agentes especializados, que se pasan el trabajo por archivos con formato fijo. Un verificador independiente
+revisa cada entrega, y las decisiones de física las toma la persona en puntos de control.
+
+- `AGENTS.md`: el flujo, los contratos entre agentes y las reglas del coordinador.
+- `.claude/agents/`: los 10 agentes (`lector-paper`, `teoria`, `generacion`, `senal-cmssw`, `datos-cms`,
+  `fondo-qcd`, `analisis`, `verificador`, `informe`, `vigilante`).
+- `EJECUTAR.md`: cómo arrancar un proyecto desde cero y qué mensaje escribir en cada etapa.
+- `contratos/`: plantillas del plan y del registro de decisiones.
+
 ## Fases
 
 | Fase | Carpeta | Qué hay | Informe |
