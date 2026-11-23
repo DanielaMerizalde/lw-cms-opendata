@@ -1,0 +1,7 @@
+# Phase 3A: Z-only s-channel (paper normalisation), full decay chain, elw -> e Z, Z -> hadrons incl. b
+set automatic_html_opening False
+import model /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/phase3/signal/mg5/ufo/LWElectron_UFO-lwcms
+define p = g u c d s u~ c~ d~ s~
+define qz = u c d s b u~ c~ d~ s~ b~
+generate p p > z > elw+ elw-, (elw+ > e+ z, z > qz qz), (elw- > e- z, z > qz qz)
+output /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/phase3/signal/mg5/PROC_lw_zonly_ejj -nojpeg

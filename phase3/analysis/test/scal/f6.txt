@@ -1,0 +1,1 @@
+root://eospublic.cern.ch//eos/opendata/cms/MonteCarlo2012/Summer12_DR53X/TTbar_8TeV-Madspin_aMCatNLO-herwig/AODSIM/PU_S10_START53_V19-v2/00000/3E3CAD7D-3C4D-E311-A9B7-002590A80E1C.root

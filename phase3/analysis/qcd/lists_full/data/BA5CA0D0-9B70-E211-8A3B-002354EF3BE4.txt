@@ -1,0 +1,1 @@
+root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/20000/BA5CA0D0-9B70-E211-8A3B-002354EF3BE4.root

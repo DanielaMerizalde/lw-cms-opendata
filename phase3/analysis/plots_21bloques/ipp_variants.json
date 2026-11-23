@@ -1,0 +1,42 @@
+{
+ "data": {
+  "N_SG": 271,
+  "mean_nSV_event": 3.1660516605166054,
+  "eff_ours": 0.3874538745387454,
+  "eff_allSVofElectron": 0.24354243542435425,
+  "eff_allSVinEvent": 0.12177121771217712,
+  "frac_SV_LT_gt_0p02": 0.5151515151515151
+ },
+ "DY": {
+  "N_SG": 8,
+  "mean_nSV_event": 2.875,
+  "eff_ours": 0.625,
+  "eff_allSVofElectron": 0.625,
+  "eff_allSVinEvent": 0.375,
+  "frac_SV_LT_gt_0p02": 0.8260869565217391
+ },
+ "TT": {
+  "N_SG": 7,
+  "mean_nSV_event": 3.857142857142857,
+  "eff_ours": 0.5714285714285714,
+  "eff_allSVofElectron": 0.2857142857142857,
+  "eff_allSVinEvent": 0.14285714285714285,
+  "frac_SV_LT_gt_0p02": 0.5185185185185185
+ },
+ "sig_causal": {
+  "N_SG": 34,
+  "mean_nSV_event": 7.411764705882353,
+  "eff_ours": 0.5588235294117647,
+  "eff_allSVofElectron": 0.4411764705882353,
+  "eff_allSVinEvent": 0.11764705882352941,
+  "frac_SV_LT_gt_0p02": 0.5634920634920635
+ },
+ "sig_acausal": {
+  "N_SG": 28,
+  "mean_nSV_event": 8.607142857142858,
+  "eff_ours": 0.5714285714285714,
+  "eff_allSVofElectron": 0.4642857142857143,
+  "eff_allSVinEvent": 0.14285714285714285,
+  "frac_SV_LT_gt_0p02": 0.5975103734439834
+ }
+}

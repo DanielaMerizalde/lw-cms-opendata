@@ -1,0 +1,56 @@
+{
+ "kappa": "k",
+ "L_proc_pb": 112.8136989051186,
+ "data_vertices": 442.0,
+ "data_vertices_unclipped": 442,
+ "mc": {
+  "DY": 654.526911297143,
+  "TTbar": 56.61425068174419,
+  "WJets": 0.0,
+  "QCD": 68.76965599434592
+ },
+ "mc_total": 779.9108179732331,
+ "data_over_bkg": 0.5667314644367065,
+ "negfrac_data": [
+  0.5271493212669683,
+  0.02374748923879064,
+  442
+ ],
+ "negfrac_data_SS": [
+  0.4891304347826087,
+  0.052116284335669574,
+  92
+ ],
+ "signal_sig_causal_xBR2_at_Lproc": 0.16995508368426052,
+ "signal_sig_acausal_xBR2_at_Lproc": 0.1895836989830053,
+ "signal_negfrac causal (as reconstructed)": [
+  0.5845070422535211,
+  0.041355429485796166,
+  142
+ ],
+ "signal_negfrac_sigEleOnly causal (as reconstructed)": [
+  0.5845070422535211,
+  0.041355429485796166,
+  142
+ ],
+ "signal_negfrac causal, $\\kappa\\to-\\kappa$ for signal-e SVs (thesis)": [
+  0.4154929577464789,
+  0.041355429485796166,
+  142
+ ],
+ "signal_negfrac_sigEleOnly causal, $\\kappa\\to-\\kappa$ for signal-e SVs (thesis)": [
+  0.4154929577464789,
+  0.041355429485796166,
+  142
+ ],
+ "signal_negfrac acausal, reflected SV (true WDV)": [
+  0.5138888888888888,
+  0.0416505884616819,
+  144
+ ],
+ "signal_negfrac_sigEleOnly acausal, reflected SV (true WDV)": [
+  0.5138888888888888,
+  0.0416505884616819,
+  144
+ ]
+}

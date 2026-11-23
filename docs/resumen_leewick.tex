@@ -1,0 +1,253 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{lmodern}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{amsmath,amssymb,slashed}
+\usepackage{booktabs,array}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,decorations.pathmorphing,decorations.markings}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black,citecolor=blue!50!black]{hyperref}
+\usepackage{enumitem}
+\setlist{itemsep=2pt,topsep=4pt}
+
+\newcommand{\lt}{\tilde{\ell}}
+\newcommand{\kpar}{\kappa_{\parallel}}
+\newcommand{\PVSV}{\overrightarrow{\mathrm{PV\,SV}}}
+\newcommand{\obs}[1]{\par\smallskip\noindent\colorbox{orange!12}{\parbox{\dimexpr\linewidth-2\fboxsep}{\small\textbf{Observación:} #1}}\par\smallskip}
+
+\title{\textbf{Lo que entiendo del paper}\\[4pt]
+\large ``Demonstrating the feasibility of testing microscopic acausality\\ at the LHC with CMS open data''\\[2pt]
+\normalsize J.~Sánchez, \emph{ACI Avances en Ciencias e Ingenierías} \textbf{15}(1), 2780 (2023)\\
+\href{https://doi.org/10.18272/aci.v15i1.2780}{doi:10.18272/aci.v15i1.2780}}
+\author{Notas de lectura previas a la reproducción}
+\date{18 de octubre de 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent El artículo es un estudio de \emph{viabilidad}, no una búsqueda: pretende mostrar que con datos abiertos de CMS (Run~1, 8~TeV, $11.5~\mathrm{fb}^{-1}$) se puede reconstruir vértices desplazados en la topología $e+jj$ y construir una variable, la \emph{paralelidad} $\kpar$, que separaría desintegraciones causales de las acausales que predice el Modelo Estándar de Lee--Wick (LWSM). La señal es la producción de pares de electrones de Lee--Wick ($\lt^{e}$, $M_{\lt}=200$~GeV), cada uno desintegrándose como $\lt\to Ze$ con $Z\to jj$. No se extrae ningún límite ni significancia: la conclusión es cualitativa (asimetría de la señal en $\kpar$ frente a un fondo aproximadamente simétrico). En este documento resumo la física, la cadena de simulación y la selección, verifico numéricamente la Tabla~1 y listo las ambigüedades que habrá que resolver para reproducirlo.
+\end{abstract}
+
+\tableofcontents
+
+%===================================================================
+\section{Contexto físico}
+%===================================================================
+
+\subsection{Teoría de Lee--Wick}
+Lee y Wick (1969--1970) propusieron una QED finita añadiendo campos de norma negativa (``fantasmas'' masivos). En lenguaje moderno, un término cinético de derivadas altas,
+\begin{equation}
+\mathcal{L}\supset -\tfrac12\,\hat\phi\,\Box\hat\phi-\tfrac{1}{2M^2}\hat\phi\,\Box^2\hat\phi ,
+\end{equation}
+se reescribe con un campo auxiliar $\tilde\phi$ de masa $M$ y signo cinético opuesto, de modo que el propagador se descompone como
+\begin{equation}
+\frac{i}{p^2}-\frac{i}{p^2-M^2}=\frac{-iM^2}{p^2(p^2-M^2)}\;,
+\end{equation}
+que cae como $1/p^4$ y mejora el comportamiento UV. Grinstein, O'Connell y Wise (2008) construyeron el LWSM: cada campo del SM tiene un compañero LW, y las divergencias cuadráticas de la masa del Higgs se cancelan (solución alternativa al problema de jerarquía).
+
+\subsection{Acausalidad microscópica}
+Las partículas LW son inestables y, por su norma negativa, su ancho efectivo tiene el signo ``equivocado'': los polos del propagador aparecen como un par complejo conjugado en la hoja física y, con la prescripción de Lee--Wick/Cutkosky et al., la unitariedad se preserva a costa de violar la causalidad a escalas $\sim 1/\Gamma$. Fenomenológicamente (Grinstein--O'Connell--Wise 2009; Alvarez, Da Rold, Schat, Szynkman 2009):
+\begin{itemize}
+\item una resonancia causal producida en el PV vuela una distancia $\sim\gamma\beta c\tau$ en la dirección de su momento antes de desintegrarse en el SV;
+\item una resonancia LW produce sus productos de desintegración \emph{antes} (o al mismo tiempo) de ser creada: el vértice aparece desplazado una distancia comparable pero en la dirección \textbf{opuesta} al momento total de los productos. Es el \emph{wrong displaced vertex} (WDV).
+\end{itemize}
+Temporalmente la diferencia es inobservable, pero la geometría no: en el WDV el momento visible apunta \emph{hacia} el PV.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=1.0,>=Stealth]
+ % --- causal ---
+ \begin{scope}
+  \node[font=\bfseries] at (-2.2,1.9) {A: causal};
+  \draw[gray,thick] (-2.5,0)--(2.5,0);
+  \fill (0,0) circle (2pt) node[below=2pt] {PV};
+  \draw[thick,blue!70!black,->] (0,0)--(1.4,1.0) node[midway,below right,font=\small] {$\lt^{+}$};
+  \fill[red] (1.4,1.0) circle (2pt) node[above left=1pt,font=\small,red] {SV};
+  \draw[->,thick] (1.4,1.0)--(2.4,1.7) node[right,font=\small]{$e^+$};
+  \draw[->,thick] (1.4,1.0)--(2.5,1.1) node[right,font=\small]{$j$};
+  \draw[->,thick] (1.4,1.0)--(2.2,0.5) node[right,font=\small]{$j$};
+  \draw[->,very thick,green!50!black] (1.4,1.0)++(0,-0.15)--++(0.9,0.55);
+  \node[green!50!black,font=\scriptsize] at (1.7,0.35) {$\vec P_{\rm tot}$};
+  \node[font=\small] at (0,-1.0) {$\kpar=\PVSV\cdot\vec P_{\rm tot}>0$};
+ \end{scope}
+ % --- acausal ---
+ \begin{scope}[xshift=7.2cm]
+  \node[font=\bfseries] at (-2.2,1.9) {B: acausal (LW)};
+  \draw[gray,thick] (-2.5,0)--(2.5,0);
+  \fill (0,0) circle (2pt) node[below=2pt] {PV};
+  \draw[thick,blue!70!black,dashed] (0,0)--(1.2,0.86);
+  \node[blue!70!black,font=\small] at (1.35,1.1) {$\lt^{+}$};
+  \fill[red] (-1.3,-0.93) circle (2pt) node[left=2pt,font=\small] {SV$'$};
+  \draw[->,thick] (-1.3,-0.93)--(-0.2,0.0) node[above right=-1pt,font=\small]{$j$};
+  \draw[->,thick] (-1.3,-0.93)--(-0.1,-0.6) node[right,font=\small]{$j$};
+  \draw[->,thick] (-1.3,-0.93)--(-0.6,0.3) node[above,font=\small]{$e^+$};
+  \node[font=\small] at (0,-1.6) {$\kpar<0$};
+ \end{scope}
+\end{tikzpicture}
+\caption{Esquema (mío, inspirado en la Fig.~1 del paper). En B los productos emergen de un vértice desplazado \emph{detrás} del PV respecto a su momento total.}
+\end{figure}
+
+%===================================================================
+\section{Modelo de señal}
+%===================================================================
+
+\subsection{Lagrangiano usado}
+El paper toma del trabajo de Alvarez et al.\ el sector de corriente neutra (NC) de los leptones LW, ya en la base de masas:
+\begin{equation}
+\begin{aligned}
+\mathcal{L}_{NC}=-Z_\mu\Big[&g_Z^{e_L}\big(\bar e_L\gamma^\mu e_L-\bar{\lt}^{e}_{L}\gamma^\mu\lt^{e}_{L}\big)
++g_Z^{e_R}\big(\bar e_R\gamma^\mu e_R-\bar{\lt}^{e}_{R}\gamma^\mu\lt^{e}_{R}\big)\\
+&+\big(g_Z^{e_L}-g_Z^{e_R}\big)\frac{m_e}{M_{\lt}}\big(\bar e_R\gamma^\mu\lt^{e}_{R}-\bar{\lt}^{e}_{R}\gamma^\mu e_R\big)\Big].
+\end{aligned}
+\label{eq:LNC}
+\end{equation}
+Lo que leo de aquí:
+\begin{itemize}
+\item Los términos diagonales $\bar\lt\gamma^\mu\lt$ (con el signo menos de norma negativa) dan la producción de pares $q\bar q\to Z^*\to\lt^+\lt^-$. (En el modelo completo también hay intercambio de $\gamma^*$, que la Ec.~\eqref{eq:LNC} no muestra.)
+\item El término de mezcla, suprimido por $m_e/M_{\lt}$, es el \textbf{único} que permite $\lt\to Ze$. Esa supresión es la que hace el ancho minúsculo y la longitud de vuelo macroscópica ($\sim 10~\mu$m), y por eso el canal es interesante para un test de vértices.
+\end{itemize}
+
+\subsection{Proceso y estado final}
+\[
+pp\to\lt^{+}\lt^{-}\to e^{+}Z\,e^{-}Z\to e^{+}e^{-}\,jjjj\qquad(\sqrt s=8~\mathrm{TeV}).
+\]
+Cadena de simulación declarada: FeynRules (Mathematica 12.3.1) $\to$ MadGraph5 (secciones eficaces) $\to$ Pythia~8 (shower/hadronización, $Z\to jj$ forzado) $\to$ CMSSW~5\_3\_X (simulación de detector y reconstrucción con el ejemplo de generación 2012 de Carrera et al., \href{https://opendata.cern.ch/record/12052}{record 12052}).
+
+\subsection{Tabla 1 y comprobación independiente}
+\begin{table}[h]
+\centering
+\begin{tabular}{cccc|c}
+\toprule
+$M_{\lt}$ (GeV) & $\sigma$ (fb)$^{\dagger}$ & $\lambda$ paper (mm) & $c\tau_0$ mío (mm) & cociente\\
+\midrule
+200 & 5.97 & $2.708\times10^{-2}$ & $2.592\times10^{-2}$ & 0.957\\
+300 & 0.96 & $1.643\times10^{-2}$ & $1.573\times10^{-2}$ & 0.957\\
+400 & 0.23 & $1.212\times10^{-2}$ & $1.160\times10^{-2}$ & 0.957\\
+500 & 0.06 & $9.652\times10^{-3}$ & $9.241\times10^{-3}$ & 0.957\\
+\bottomrule
+\end{tabular}
+\caption{Columnas 1--3: Tabla~1 del paper. $^{\dagger}$El paper escribe ``fb$^{-1}$'', pero se trata obviamente de fb. Columna 4: mi cálculo a nivel árbol.}
+\label{tab:lambda}
+\end{table}
+
+Para entender qué es $\lambda$ calculé el ancho de $\lt\to Ze$ con el acoplamiento de mezcla de \eqref{eq:LNC}, $c=\frac{g}{c_W}\,\big|g^{e_L}-g^{e_R}\big|\,\frac{m_e}{M_{\lt}}$ con $|g^{e_L}-g^{e_R}|=\tfrac12$:
+\begin{equation}
+\Gamma(\lt\to Ze)=\frac{c^2M_{\lt}^3}{32\pi m_Z^2}\,(1-x)^2(1+2x),\qquad x=\frac{m_Z^2}{M_{\lt}^2},
+\end{equation}
+donde el factor $M^3/m_Z^2$ viene de la polarización longitudinal del $Z$. Como $c^2\propto M^{-2}$, resulta $\Gamma\propto M_{\lt}$ (salvo espacio de fases) y $c\tau_0=\hbar c/\Gamma\propto 1/M_{\lt}$.
+\begin{itemize}
+\item La \textbf{dependencia en masa coincide exactamente} (cociente constante $0.957$ en las cuatro masas). La diferencia global del 4\% es compatible con la convención de $\sin^2\theta_W$ / esquema de entrada electrodébil (yo usé $c_W=m_W/m_Z$ y $G_F$).
+\item Conclusión: \textbf{$\lambda$ es la longitud de desintegración propia $c\tau_0$, sin boost}. La distancia en el laboratorio es $\gamma\beta c\tau_0$; para $M=200$~GeV producido cerca del umbral, $\gamma\beta\sim\mathcal{O}(1)$, así que el desplazamiento típico es $\sim 20$--$40~\mu$m: justo en el límite de la resolución de vértice de CMS ($\sim 20~\mu$m) que cita el paper. Por eso eligen 200~GeV: el mayor $c\tau$ \emph{y} la mayor sección eficaz.
+\item Se asume BR$(\lt\to Ze)=1$ implícitamente. En un leptón vectorial típico también existen $W\nu$ y $he$; el paper no lo discute (en la Ec.~\eqref{eq:LNC} sólo aparece el sector NC).
+\end{itemize}
+
+\textbf{Número de eventos esperado.} Con $\sigma=5.97$~fb y $\mathcal{L}=11.5~\mathrm{fb}^{-1}$: $\approx 69$ pares producidos, $\approx 34$ tras BR$(Z\to jj)^2\approx0.49$, antes de cualquier eficiencia. De ahí que en la Fig.~2 la señal esté escalada $\times1000$: el análisis no tiene sensibilidad real, sólo demuestra el método.
+
+%===================================================================
+\section{La variable de paralelidad}
+%===================================================================
+\begin{equation}
+\kpar\equiv\PVSV\cdot\vec P_{\rm tot},\qquad \vec P_{\rm tot}=\sum_{i\in\mathrm{SV}}\vec p_i .
+\end{equation}
+\begin{itemize}
+\item Causal: $\kpar>0$ mayoritariamente. WDV: $\kpar<0$.
+\item Para el fondo SM (vértices reales de $b$, conversiones, vértices falsos alrededor del PV) se espera una distribución casi simétrica centrada en 0, con una cola positiva de los vértices genuinamente desplazados (p.ej.\ $b$ en $t\bar t$).
+\item \textbf{Truco de simulación:} MadGraph/Pythia no pueden generar desintegraciones hacia atrás en el tiempo (se violaría la conservación en la cadena de simulación). Así que simulan $\lt$ como resonancias \emph{causales} con $c\tau_0=\lambda$ e \textbf{invierten el signo} de $\kpar$ para los vértices de señal.
+\end{itemize}
+
+\obs{El paper no especifica las unidades de $\kpar$ (el eje de la Fig.~2 va de $-150$ a $150$), ni si $\PVSV$ y $\vec P_{\rm tot}$ son 3D o transversales, ni si la PV es el vértice primario reconstruido o el beamspot. Con $|\PVSV|\sim 0.02$--1~mm y $|\vec P|\sim 100$~GeV, el rango sugiere mm$\cdot$GeV con desplazamientos del orden del mm (vértices falsos y de $b$), o bien cm. Esto hay que fijarlo antes de comparar histogramas.}
+
+\obs{Invertir $\kpar$ sólo equivale a simular un WDV si la reconstrucción y los cortes son simétricos bajo $\PVSV\to-\PVSV$. El algoritmo de [24] (CMS RPV 8~TeV) tiene cortes geométricos que podrían no serlo. Una alternativa más fiel: desplazar a mano el vértice de desintegración en el HepMC/LHE a $-\gamma\beta c\tau\,\hat p$ antes de GEN-SIM.}
+
+%===================================================================
+\section{Datos y simulaciones}
+%===================================================================
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{4.6cm}>{\raggedright\arraybackslash}p{5.6cm}>{\raggedright\arraybackslash}p{3.8cm}}
+\toprule
+Muestra & DOI 10.7483/OPENDATA.CMS.… & $\sigma$ / $\mathcal{L}$ \\
+\midrule
+DoublePhoton 2012 (dos periodos) & CEPG.EXLP / KT69.ANB8 & $4.412+7.055=11.47~\mathrm{fb}^{-1}$\\
+DYJetsToLL M-50 (MadGraph, Z2*) & ARKO.6NV3 & 3503.7 pb\\
+TTbar (MadSpin aMC@NLO+Herwig) & XH95.JNSE & 225.2 pb\\
+W1/2/3JetsToLNu (MadGraph) & REHM.JKUH / DELK.2V7R / HHCJ.TVXH & $1.75\times10^{-1}$ pb (?)\\
+QCD multijet & dirigido por datos (región SS) & ajuste\\
+\bottomrule
+\end{tabular}
+\caption{Muestras usadas.}
+\end{table}
+
+\obs{La sección eficaz citada para W+jets ($0.175$ pb) es varios órdenes de magnitud menor que la de las muestras W$n$JetsToLNu reales (del orden de nb). Probablemente es una errata o un factor de unidades. Habrá que tomar las secciones eficaces de los registros de Open Data.}
+
+\obs{Usan el dataset \emph{DoublePhoton} y un trigger diphoton ($E_T>36/22$~GeV, aislado y con forma de cascada ``mild'', esto es, el trigger de $H\to\gamma\gamma$, ref.~[23]). Exigen después que los objetos sean electrones. Es una elección poco habitual (lo natural sería \emph{DoubleElectron}), pero el trigger acepta electrones porque no usa veto de trazas. Hay que identificar el path HLT exacto (familia \texttt{HLT\_Photon36\_\ldots\_Photon22\_\ldots}).}
+
+\textbf{Fondo QCD}: se estima en la región ortogonal de electrones del mismo signo (SS), se ajusta la normalización para que fondo+MC reproduzca los datos y se extrapola a la región de signo opuesto (OS).
+
+%===================================================================
+\section{Selección de eventos}
+%===================================================================
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{>{\bfseries}l p{12cm}}
+\toprule
+TF & Trigger diphoton: $E_T^{\rm lead}>36$, $E_T^{\rm sublead}>22$~GeV, objetos aislados con forma de cascada estrecha. Los egamma deben ser electrones. $\geq 4$ jets con $p_T>15$~GeV.\\
+OS & Electrones: $p_T>40$ y $25$~GeV (eficiencia de trigger $\sim$99\%), trazas de alta calidad como en [22] (CMS, búsqueda de LLP en canales leptónicos). $\geq4$ jets hadrónicos con $\geq2$ constituyentes, $p_T>20$~GeV y fracción electromagnética $<0.6$ (para no contar el electrón como jet), como en [24].\\
+SG & Par de electrones de signo opuesto. Topología $e$--jets: $|\Delta R_1-\Delta R_2|<0.2$, con $\Delta R_{1,2}$ la distancia del electrón al primer y al segundo jet más cercano, $\Delta R=\sqrt{\Delta\phi^2+\Delta\eta^2}$.\\
+SV & Combinar cada electrón con cualquier par de jets que dé una masa invariante en $[80,160]$~GeV. Las trazas de esos objetos van al algoritmo de vértices de [24]: todos los pares de trazas se ajustan, se aceptan los de $\chi^2/\mathrm{ndf}<5$, los SV que comparten trazas se fusionan y se reajustan iterativamente. El SV$'$ final tiene $\geq5$ trazas y cumple los cortes geométricos de [24].\\
+WDVC & $\geq1$ WDV asociado a la traza de un electrón. Todo SV asociado al mismo electrón con $|\PVSV'|_{T}>0.02$~mm. $|\vec P'_{\rm tot}|_T>20$~GeV.\\
+\bottomrule
+\end{tabular}
+\caption{Cadena de selección tal como la entiendo.}
+\end{table}
+
+\obs{Ambigüedades de la selección: (i) la ventana 80--160~GeV \textquestiondown{}es $m_{jj}$ (compatible con un $Z$, pero muy ancha) o $m_{ejj}$ (que para la señal debería estar en $\sim200$~GeV)? El texto dice ``any pair of jets that happen to reconstruct an invariant mass'', lo que sugiere $m_{jj}$. (ii) El corte $\Delta R$ está escrito de forma algo confusa. (iii) No se dan los cortes geométricos concretos tomados de [24] (allí había, por ejemplo, $d_{BV}>100~\mu$m respecto al beamspot y un radio dentro de la beampipe). (iv) No hay cutflow ni eficiencias por etapa, que serían la mejor validación de una reproducción.}
+
+%===================================================================
+\section{Resultado}
+%===================================================================
+La Fig.~2 del paper muestra $\kpar$ para los vértices reconstruidos ($e+jj$) tras la selección: datos (puntos), fondos apilados ($Z\to\ell\ell$, W+jets, $t\bar t$, QCD) y señal $\times1000$.
+\begin{itemize}
+\item Los datos concuerdan con el MC dentro de las incertidumbres (ratio $\approx1$).
+\item El fondo tiene un pico estrecho en 0, aproximadamente simétrico, con una cola positiva algo más poblada ($t\bar t$).
+\item La señal (con signo invertido) se inclina hacia $\kpar<0$. Esa asimetría es el argumento de viabilidad.
+\end{itemize}
+
+\textbf{Sistemáticos} (Tabla~2 del paper, sólo de normalización): reconstrucción de vértices 18\%, resolución en energía de jets 3\%, de electrones 1\%, evento subyacente 3\%, desalineamiento del tracker 2\%, luminosidad 3\%, trigger 1\%. No se consideran incertidumbres de forma en $\kpar$, que serían las relevantes para una asimetría.
+
+\textbf{Conclusión del autor:} el método WDV es viable en datos de CMS. Con más luminosidad (Run~2/3, HL-LHC) y un tratamiento más fino de sistemáticos podría usarse para poner a prueba la causalidad microscópica.
+
+%===================================================================
+\section{Valoración crítica}
+%===================================================================
+\begin{enumerate}
+\item \textbf{Fuerte:} la idea del observable es limpia y física: un vértice ``detrás'' del momento visible es casi imposible de producir en el SM, salvo por resolución. El cálculo de $\lambda$ es consistente con el Lagrangiano (verificado arriba).
+\item \textbf{Débil:} los desplazamientos de la señal ($\sim20$--$40~\mu$m) son del orden de la resolución, así que buena parte de los SV de señal serán indistinguibles de vértices del PV. El corte WDVC de $0.02$~mm está en el límite exacto.
+\item No hay figura de mérito: ni significancia esperada, ni límite, ni la asimetría $A=(N_{\kappa<0}-N_{\kappa>0})/N$ cuantificada.
+\item Faltan detalles operativos (unidades de $\kpar$, cutflow, path HLT, cortes de [24], definición exacta del ajuste QCD) que obligarán a tomar decisiones propias en la reproducción y documentarlas.
+\item Erratas menores: $\sigma$ en ``fb$^{-1}$''; la señal se describe como ``línea verde punteada'' cuando en la figura es salmón discontinua; $\sigma_{W+\rm jets}$ dudosa.
+\end{enumerate}
+
+%===================================================================
+\section{Implicaciones para la reproducción}
+%===================================================================
+\begin{enumerate}
+\item \textbf{Modelo:} implementar en FeynRules el sector de leptones LW (al menos la Ec.~\eqref{eq:LNC} más el acoplamiento a $\gamma$) y exportar el UFO. Validar el ancho frente a la Tabla~\ref{tab:lambda}: el cociente $0.957$ fija la convención EW.
+\item \textbf{Generación:} MG5 $pp\to\lt^+\lt^-$ a 8~TeV (PDF de época, p.ej.\ CTEQ6L1) para $M=200$--500~GeV, reproducir las $\sigma$ de la Tabla~1. Desintegración $\lt\to Ze$, $Z\to jj$ con \texttt{time\_of\_flight} activado en MG o \texttt{ctau} en Pythia~8.
+\item \textbf{Detector:} CMSSW\_5\_3\_32 (contenedor de Open Data) GEN-SIM $\to$ DIGI-RECO $\to$ AOD con las condiciones de 2012 (record 12052). Alternativa rápida para iterar: Delphes con \emph{smearing} de vértices de $\sim20~\mu$m (no reproduce el ajuste de vértices con trazas).
+\item \textbf{Análisis:} \texttt{EDAnalyzer} sobre AOD: trigger, selección TF/OS/SG, ajuste de vértices con \texttt{KalmanVertexFitter} sobre las trazas de $e+jj$, fusión iterativa, cálculo de $\kpar$ y WDVC.
+\item \textbf{Fondos y datos:} AODSIM de DY, $t\bar t$, W+jets y el DoublePhoton 2012 con el JSON certificado. QCD a partir de la región SS.
+\item \textbf{Validación:} superponer nuestra Fig.~2 a la del paper (forma de los fondos, rango de $\kpar$, ratio datos/MC) y construir un cutflow propio.
+\item \textbf{Mejora natural:} desplazar el vértice de verdad en lugar de invertir $\kpar$, añadir sistemáticos de forma y cuantificar la asimetría y la luminosidad necesaria para $3\sigma$/$5\sigma$.
+\end{enumerate}
+
+\vfill
+\noindent\rule{\linewidth}{0.4pt}\\
+\small Referencias clave del paper: [3] Grinstein, O'Connell, Wise, PRD 77, 025012 (2008); [4,5] Lee \& Wick (1969, 1970); [6] Grinstein et al., PRD 79, 105019 (2009); [7] Alvarez et al., JHEP 10 (2009) 023, arXiv:0908.2446; [22] CMS, JHEP 02 (2013) 085; [24] CMS, PRD 95, 012009 (2017), arXiv:1610.05133.
+\end{document}

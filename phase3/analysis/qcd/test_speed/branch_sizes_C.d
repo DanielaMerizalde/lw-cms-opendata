@@ -1,0 +1,50 @@
+
+# DO NOT DELETE
+
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TFile.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TDirectoryFile.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TDirectory.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TNamed.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TObject.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/Rtypes.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/RConfig.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/RVersion.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/DllImport.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/Rtypeinfo.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/snprintf.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/strlcpy.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TGenericClassInfo.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TSchemaHelper.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TStorage.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TVersionCheck.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/Riosfwd.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TBuffer.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TString.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TMathBase.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TList.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TSeqCollection.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TCollection.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TIterator.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TDatime.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TUUID.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TUrl.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TMap.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/THashTable.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TTree.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TBranch.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TObjArray.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TAttFill.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TDataType.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TDictionary.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/Property.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TAttLine.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TAttMarker.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TArrayD.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TArray.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TArrayI.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TClass.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TObjString.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TVirtualTreePlayer.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/TLeaf.h
+./branch_sizes_C.so: /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/cintdictversion.h /opt/cms/slc6_amd64_gcc472/lcg/root/5.32.00-cms/include/RVersion.h
+branch_sizes_C__ROOTBUILDVERSION= 5.32/00

@@ -1,0 +1,273 @@
+{
+ "targets": {
+  "sv_per_event": 0.04707616104140656,
+  "ipp": {
+   "data": 0.0029473770391141496,
+   "sig_causal": 0.002342307692307692,
+   "DY": 0.00033282049671889226,
+   "TT": 0.008211678832116789
+  }
+ },
+ "results": {
+  "v2 tal cual": {
+   "data": {
+    "n_SG": 271,
+    "sv_per_event": 1.6309963099630995,
+    "ipp_eff": 0.3874538745387454,
+    "n_ipp": 105
+   },
+   "sig_causal": {
+    "n_SG": 67,
+    "sv_per_event": 4.880597014925373,
+    "ipp_eff": 0.5373134328358209,
+    "n_ipp": 36
+   },
+   "DY": {
+    "n_SG": 8,
+    "sv_per_event": 2.375,
+    "ipp_eff": 0.625,
+    "n_ipp": 5
+   },
+   "TT": {
+    "n_SG": 7,
+    "sv_per_event": 2.0,
+    "ipp_eff": 0.5714285714285714,
+    "n_ipp": 4
+   }
+  },
+  "L_T en cm (0.2 mm)": {
+   "data": {
+    "n_SG": 271,
+    "sv_per_event": 0.1033210332103321,
+    "ipp_eff": 0.14760147601476015,
+    "n_ipp": 40
+   },
+   "sig_causal": {
+    "n_SG": 67,
+    "sv_per_event": 0.11940298507462686,
+    "ipp_eff": 0.029850746268656716,
+    "n_ipp": 2
+   },
+   "DY": {
+    "n_SG": 8,
+    "sv_per_event": 0.125,
+    "ipp_eff": 0.125,
+    "n_ipp": 1
+   },
+   "TT": {
+    "n_SG": 7,
+    "sv_per_event": 0.14285714285714285,
+    "ipp_eff": 0.2857142857142857,
+    "n_ipp": 2
+   }
+  },
+  "|P_T| > 20 GeV también en la figura": {
+   "data": {
+    "n_SG": 271,
+    "sv_per_event": 1.3763837638376384,
+    "ipp_eff": 0.4132841328413284,
+    "n_ipp": 112
+   },
+   "sig_causal": {
+    "n_SG": 67,
+    "sv_per_event": 4.641791044776119,
+    "ipp_eff": 0.5373134328358209,
+    "n_ipp": 36
+   },
+   "DY": {
+    "n_SG": 8,
+    "sv_per_event": 2.25,
+    "ipp_eff": 0.625,
+    "n_ipp": 5
+   },
+   "TT": {
+    "n_SG": 7,
+    "sv_per_event": 1.8571428571428572,
+    "ipp_eff": 0.5714285714285714,
+    "n_ipp": 4
+   }
+  },
+  "1 SV por electrón (más trazas)": {
+   "data": {
+    "n_SG": 271,
+    "sv_per_event": 0.6309963099630996,
+    "ipp_eff": 0.45018450184501846,
+    "n_ipp": 122
+   },
+   "sig_causal": {
+    "n_SG": 67,
+    "sv_per_event": 0.9402985074626866,
+    "ipp_eff": 0.7313432835820896,
+    "n_ipp": 49
+   },
+   "DY": {
+    "n_SG": 8,
+    "sv_per_event": 1.125,
+    "ipp_eff": 0.5,
+    "n_ipp": 4
+   },
+   "TT": {
+    "n_SG": 7,
+    "sv_per_event": 0.5714285714285714,
+    "ipp_eff": 0.5714285714285714,
+    "n_ipp": 4
+   }
+  },
+  "1 SV por electrón (mejor χ²)": {
+   "data": {
+    "n_SG": 271,
+    "sv_per_event": 0.6531365313653137,
+    "ipp_eff": 0.44649446494464945,
+    "n_ipp": 121
+   },
+   "sig_causal": {
+    "n_SG": 67,
+    "sv_per_event": 1.1343283582089552,
+    "ipp_eff": 0.7164179104477612,
+    "n_ipp": 48
+   },
+   "DY": {
+    "n_SG": 8,
+    "sv_per_event": 1.125,
+    "ipp_eff": 0.5,
+    "n_ipp": 4
+   },
+   "TT": {
+    "n_SG": 7,
+    "sv_per_event": 0.8571428571428571,
+    "ipp_eff": 0.5714285714285714,
+    "n_ipp": 4
+   }
+  },
+  "1 SV por colisión (más trazas)": {
+   "data": {
+    "n_SG": 271,
+    "sv_per_event": 0.33948339483394835,
+    "ipp_eff": 0.3284132841328413,
+    "n_ipp": 89
+   },
+   "sig_causal": {
+    "n_SG": 67,
+    "sv_per_event": 0.417910447761194,
+    "ipp_eff": 0.4925373134328358,
+    "n_ipp": 33
+   },
+   "DY": {
+    "n_SG": 8,
+    "sv_per_event": 0.625,
+    "ipp_eff": 0.375,
+    "n_ipp": 3
+   },
+   "TT": {
+    "n_SG": 7,
+    "sv_per_event": 0.2857142857142857,
+    "ipp_eff": 0.14285714285714285,
+    "n_ipp": 1
+   }
+  },
+  "L_T/σ > 3": {
+   "data": {
+    "n_SG": 271,
+    "sv_per_event": 0.46494464944649444,
+    "ipp_eff": 0.14391143911439114,
+    "n_ipp": 39
+   },
+   "sig_causal": {
+    "n_SG": 67,
+    "sv_per_event": 1.791044776119403,
+    "ipp_eff": 0.3880597014925373,
+    "n_ipp": 26
+   },
+   "DY": {
+    "n_SG": 8,
+    "sv_per_event": 0.875,
+    "ipp_eff": 0.375,
+    "n_ipp": 3
+   },
+   "TT": {
+    "n_SG": 7,
+    "sv_per_event": 0.42857142857142855,
+    "ipp_eff": 0.14285714285714285,
+    "n_ipp": 1
+   }
+  },
+  "≥ 8 trazas": {
+   "data": {
+    "n_SG": 271,
+    "sv_per_event": 1.1476014760147601,
+    "ipp_eff": 0.31365313653136534,
+    "n_ipp": 85
+   },
+   "sig_causal": {
+    "n_SG": 67,
+    "sv_per_event": 3.656716417910448,
+    "ipp_eff": 0.5671641791044776,
+    "n_ipp": 38
+   },
+   "DY": {
+    "n_SG": 8,
+    "sv_per_event": 1.625,
+    "ipp_eff": 0.5,
+    "n_ipp": 4
+   },
+   "TT": {
+    "n_SG": 7,
+    "sv_per_event": 0.8571428571428571,
+    "ipp_eff": 0.42857142857142855,
+    "n_ipp": 3
+   }
+  },
+  "1 SV por electrón + L_T en cm": {
+   "data": {
+    "n_SG": 271,
+    "sv_per_event": 0.033210332103321034,
+    "ipp_eff": 0.45018450184501846,
+    "n_ipp": 122
+   },
+   "sig_causal": {
+    "n_SG": 67,
+    "sv_per_event": 0.014925373134328358,
+    "ipp_eff": 0.7313432835820896,
+    "n_ipp": 49
+   },
+   "DY": {
+    "n_SG": 8,
+    "sv_per_event": 0.0,
+    "ipp_eff": 0.5,
+    "n_ipp": 4
+   },
+   "TT": {
+    "n_SG": 7,
+    "sv_per_event": 0.14285714285714285,
+    "ipp_eff": 0.5714285714285714,
+    "n_ipp": 4
+   }
+  },
+  "1 SV por colisión + |P_T| > 20": {
+   "data": {
+    "n_SG": 271,
+    "sv_per_event": 0.33579335793357934,
+    "ipp_eff": 0.36531365313653136,
+    "n_ipp": 99
+   },
+   "sig_causal": {
+    "n_SG": 67,
+    "sv_per_event": 0.43283582089552236,
+    "ipp_eff": 0.4925373134328358,
+    "n_ipp": 33
+   },
+   "DY": {
+    "n_SG": 8,
+    "sv_per_event": 0.625,
+    "ipp_eff": 0.375,
+    "n_ipp": 3
+   },
+   "TT": {
+    "n_SG": 7,
+    "sv_per_event": 0.2857142857142857,
+    "ipp_eff": 0.14285714285714285,
+    "n_ipp": 1
+   }
+  }
+ }
+}

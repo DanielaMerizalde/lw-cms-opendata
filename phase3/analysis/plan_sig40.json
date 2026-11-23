@@ -1,0 +1,54 @@
+{
+ "sig_causal": {
+  "isData": 0,
+  "container": "lw3b-sig",
+  "files": [
+   "file:/sigaod/causal/lw_zonly_M200_causal_b000_AODSIM.root",
+   "file:/sigaod/causal/lw_zonly_M200_causal_b001_AODSIM.root",
+   "file:/sigaod/causal/lw_zonly_M200_causal_b002_AODSIM.root",
+   "file:/sigaod/causal/lw_zonly_M200_causal_b003_AODSIM.root",
+   "file:/sigaod/causal/lw_zonly_M200_causal_b004_AODSIM.root",
+   "file:/sigaod/causal/lw_zonly_M200_causal_b005_AODSIM.root",
+   "file:/sigaod/causal/lw_zonly_M200_causal_b006_AODSIM.root",
+   "file:/sigaod/causal/lw_zonly_M200_causal_b007_AODSIM.root",
+   "file:/sigaod/causal/lw_zonly_M200_causal_b008_AODSIM.root",
+   "file:/sigaod/causal/lw_zonly_M200_causal_b009_AODSIM.root",
+   "file:/sigaod/causal/lw_zonly_M200_causal_b010_AODSIM.root",
+   "file:/sigaod/causal/lw_zonly_M200_causal_b011_AODSIM.root",
+   "file:/sigaod/causal/lw_zonly_M200_causal_b012_AODSIM.root",
+   "file:/sigaod/causal/lw_zonly_M200_causal_b013_AODSIM.root",
+   "file:/sigaod/causal/lw_zonly_M200_causal_b014_AODSIM.root",
+   "file:/sigaod/causal/lw_zonly_M200_causal_b015_AODSIM.root",
+   "file:/sigaod/causal/lw_zonly_M200_causal_b016_AODSIM.root",
+   "file:/sigaod/causal/lw_zonly_M200_causal_b017_AODSIM.root",
+   "file:/sigaod/causal/lw_zonly_M200_causal_b018_AODSIM.root",
+   "file:/sigaod/causal/lw_zonly_M200_causal_b019_AODSIM.root"
+  ]
+ },
+ "sig_acausal": {
+  "isData": 0,
+  "container": "lw3b-sig",
+  "files": [
+   "file:/sigaod/acausal/lw_zonly_M200_acausal_b000_AODSIM.root",
+   "file:/sigaod/acausal/lw_zonly_M200_acausal_b001_AODSIM.root",
+   "file:/sigaod/acausal/lw_zonly_M200_acausal_b002_AODSIM.root",
+   "file:/sigaod/acausal/lw_zonly_M200_acausal_b003_AODSIM.root",
+   "file:/sigaod/acausal/lw_zonly_M200_acausal_b004_AODSIM.root",
+   "file:/sigaod/acausal/lw_zonly_M200_acausal_b005_AODSIM.root",
+   "file:/sigaod/acausal/lw_zonly_M200_acausal_b006_AODSIM.root",
+   "file:/sigaod/acausal/lw_zonly_M200_acausal_b007_AODSIM.root",
+   "file:/sigaod/acausal/lw_zonly_M200_acausal_b008_AODSIM.root",
+   "file:/sigaod/acausal/lw_zonly_M200_acausal_b009_AODSIM.root",
+   "file:/sigaod/acausal/lw_zonly_M200_acausal_b010_AODSIM.root",
+   "file:/sigaod/acausal/lw_zonly_M200_acausal_b011_AODSIM.root",
+   "file:/sigaod/acausal/lw_zonly_M200_acausal_b012_AODSIM.root",
+   "file:/sigaod/acausal/lw_zonly_M200_acausal_b013_AODSIM.root",
+   "file:/sigaod/acausal/lw_zonly_M200_acausal_b014_AODSIM.root",
+   "file:/sigaod/acausal/lw_zonly_M200_acausal_b015_AODSIM.root",
+   "file:/sigaod/acausal/lw_zonly_M200_acausal_b016_AODSIM.root",
+   "file:/sigaod/acausal/lw_zonly_M200_acausal_b017_AODSIM.root",
+   "file:/sigaod/acausal/lw_zonly_M200_acausal_b018_AODSIM.root",
+   "file:/sigaod/acausal/lw_zonly_M200_acausal_b019_AODSIM.root"
+  ]
+ }
+}

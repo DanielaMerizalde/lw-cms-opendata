@@ -1,0 +1,22 @@
+! Pythia 8.317 settings for LW-electron signal: LHE (MG5, with VTIMUP) -> shower/hadronisation -> HepMC2
+! Read by lw_pythia_hepmc (the LHE file name, the seed and the number of events are set on the command line).
+Beams:frameType        = 4          ! read Les Houches Event file
+Beams:allowVertexSpread = off       ! PV = (0,0,0,0); CMSSW VtxSmeared adds the 2012 beamspot later
+! --- lifetimes / vertices ---
+LesHouches:setLifetime = 1          ! take decay times (VTIMUP = c*tau in mm, proper) from the LHE (except taus)
+ParticleDecays:limitTau0 = on       ! CMS convention: Pythia decays only particles with c*tau0 < 10 mm,
+ParticleDecays:tau0Max   = 10.      !   longer-lived ones (K0S, Lambda, ...) are left to Geant4
+! --- physics: CMS tune CUETP8M1 (MonashStar, NNPDF2.3 LO); CMS 2012 MC used Pythia6 Z2* ---
+Tune:pp                = 18         ! tunes/CMS-CUETP8M1-NNPDF23LO.cmnd
+PartonLevel:MPI        = on
+PartonLevel:ISR        = on
+PartonLevel:FSR        = on
+HadronLevel:all        = on
+! --- the new particle: defined by the driver from the command line (M, ctau0):
+!     9000011:all = elw- elw+ 2 -3 0 M 0. 0. 0. ctau0 ;  9000011:mayDecay = off
+!     (decays come from the LHE decay-chain ME; Pythia must not redecay)
+! --- output verbosity ---
+Next:numberCount       = 2000
+Next:numberShowEvent   = 0
+Next:numberShowProcess = 0
+Next:numberShowInfo    = 1

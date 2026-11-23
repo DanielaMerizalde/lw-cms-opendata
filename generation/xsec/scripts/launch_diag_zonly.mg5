@@ -1,0 +1,140 @@
+set automatic_html_opening False
+set run_mode 2
+set nb_core 8
+set lhapdf_py3 /Users/danielamerizalde/Downloads/lee-wick/MG5_aMC_v3_8_1/bin/HEPTools/lhapdf6_py3/bin/lhapdf-config
+launch /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/generation/xsec/proc_zonly -n zonly_nn23lo1_rep0_M200_dynm1_sf1_etap1
+shower=OFF
+done
+set ebeam1 4000
+set ebeam2 4000
+set nevents 10000
+set use_syst False
+set MLW 200
+set WLW 7.28775e-12
+set etaLW 1
+set lwRep 0
+set scalefact 1.0
+set pdlabel nn23lo1
+set fixed_ren_scale False
+set fixed_fac_scale False
+set dynamical_scale_choice -1
+done
+launch /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/generation/xsec/proc_zonly -n zonly_nn23lo1_rep0_M300_dynm1_sf1_etap1
+shower=OFF
+done
+set ebeam1 4000
+set ebeam2 4000
+set nevents 10000
+set use_syst False
+set MLW 300
+set WLW 1.20102e-11
+set etaLW 1
+set lwRep 0
+set scalefact 1.0
+set pdlabel nn23lo1
+set fixed_ren_scale False
+set fixed_fac_scale False
+set dynamical_scale_choice -1
+done
+launch /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/generation/xsec/proc_zonly -n zonly_nn23lo1_rep0_M400_dynm1_sf1_etap1
+shower=OFF
+done
+set ebeam1 4000
+set ebeam2 4000
+set nevents 10000
+set use_syst False
+set MLW 400
+set WLW 1.62795e-11
+set etaLW 1
+set lwRep 0
+set scalefact 1.0
+set pdlabel nn23lo1
+set fixed_ren_scale False
+set fixed_fac_scale False
+set dynamical_scale_choice -1
+done
+launch /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/generation/xsec/proc_zonly -n zonly_nn23lo1_rep0_M500_dynm1_sf1_etap1
+shower=OFF
+done
+set ebeam1 4000
+set ebeam2 4000
+set nevents 10000
+set use_syst False
+set MLW 500
+set WLW 2.04432e-11
+set etaLW 1
+set lwRep 0
+set scalefact 1.0
+set pdlabel nn23lo1
+set fixed_ren_scale False
+set fixed_fac_scale False
+set dynamical_scale_choice -1
+done
+launch /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/generation/xsec/proc_zonly -n zonly_nn23lo1_rep1_M200_dynm1_sf1_etap1
+shower=OFF
+done
+set ebeam1 4000
+set ebeam2 4000
+set nevents 10000
+set use_syst False
+set MLW 200
+set WLW 7.28775e-12
+set etaLW 1
+set lwRep 1
+set scalefact 1.0
+set pdlabel nn23lo1
+set fixed_ren_scale False
+set fixed_fac_scale False
+set dynamical_scale_choice -1
+done
+launch /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/generation/xsec/proc_zonly -n zonly_nn23lo1_rep1_M300_dynm1_sf1_etap1
+shower=OFF
+done
+set ebeam1 4000
+set ebeam2 4000
+set nevents 10000
+set use_syst False
+set MLW 300
+set WLW 1.20102e-11
+set etaLW 1
+set lwRep 1
+set scalefact 1.0
+set pdlabel nn23lo1
+set fixed_ren_scale False
+set fixed_fac_scale False
+set dynamical_scale_choice -1
+done
+launch /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/generation/xsec/proc_zonly -n zonly_nn23lo1_rep1_M400_dynm1_sf1_etap1
+shower=OFF
+done
+set ebeam1 4000
+set ebeam2 4000
+set nevents 10000
+set use_syst False
+set MLW 400
+set WLW 1.62795e-11
+set etaLW 1
+set lwRep 1
+set scalefact 1.0
+set pdlabel nn23lo1
+set fixed_ren_scale False
+set fixed_fac_scale False
+set dynamical_scale_choice -1
+done
+launch /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/generation/xsec/proc_zonly -n zonly_nn23lo1_rep1_M500_dynm1_sf1_etap1
+shower=OFF
+done
+set ebeam1 4000
+set ebeam2 4000
+set nevents 10000
+set use_syst False
+set MLW 500
+set WLW 2.04432e-11
+set etaLW 1
+set lwRep 1
+set scalefact 1.0
+set pdlabel nn23lo1
+set fixed_ren_scale False
+set fixed_fac_scale False
+set dynamical_scale_choice -1
+done

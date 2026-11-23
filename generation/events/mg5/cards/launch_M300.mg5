@@ -1,0 +1,26 @@
+launch /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/generation/events/mg5/PROC_lw_ejj -n M300
+shower=OFF
+madspin=OFF
+analysis=OFF
+done
+/Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/generation/events/mg5/cards/param_card_M300.dat
+set nevents 5000
+set iseed 3003
+set ebeam1 4000
+set ebeam2 4000
+set time_of_flight 0.0
+set use_syst False
+set ptj 0
+set ptl 0
+set ptb 0
+set etaj -1
+set etal -1
+set etab -1
+set drjj 0
+set drll 0
+set drjl 0
+set drbb 0
+set drbj 0
+set drbl 0
+set cut_decays False
+done

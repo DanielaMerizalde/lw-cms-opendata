@@ -1,0 +1,27 @@
+{
+ "datasets": {
+  "6005": {
+   "files_done": 16,
+   "files_total": 1612,
+   "byte_fraction": 0.009973544681690164,
+   "LS_seen": 628,
+   "LS_certified": 50911,
+   "LS_fraction": 0.012335251713775018,
+   "L_bytes_pb": 44.003279135617,
+   "L_LS_pb": 54.423130561175384
+  },
+  "6031": {
+   "files_done": 27,
+   "files_total": 2719,
+   "byte_fraction": 0.009753425906378682,
+   "LS_seen": 725,
+   "LS_certified": 80586,
+   "LS_fraction": 0.008996599905690815,
+   "L_bytes_pb": 68.8104197695016,
+   "L_LS_pb": 63.4710123346487
+  }
+ },
+ "L_processed_pb": 112.8136989051186,
+ "L_LS_estimate_pb": 117.89414289582407,
+ "fraction_of_11467pb": 0.009838117982481782
+}

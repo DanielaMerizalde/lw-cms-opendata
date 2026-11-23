@@ -1,0 +1,3 @@
+set automatic_html_opening False
+import model /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/model/LWElectron_UFO
+compute_widths elw- --body_decay=2 --path=/Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/model/mg5/param_card_me5.110e-04_M500.dat --output=/Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/model/mg5/widths_me5.110e-04_M500.dat

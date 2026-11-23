@@ -1,0 +1,134 @@
+{
+ "cutflow_common_blocks": {
+  "blocks": 10,
+  "sig_causal": [
+   250,
+   165,
+   141,
+   139,
+   83,
+   30,
+   29,
+   19
+  ],
+  "sig_acausal": [
+   250,
+   168,
+   152,
+   145,
+   79,
+   28,
+   28,
+   16
+  ]
+ },
+ "DRC_events": {
+  "sig_causal": 30,
+  "sig_acausal": 28
+ },
+ "DRC_events_in_both": 19,
+ "event_numbers_example": {
+  "sig_causal": [
+   [
+    0,
+    2
+   ],
+   [
+    0,
+    9
+   ],
+   [
+    0,
+    19
+   ],
+   [
+    1,
+    26
+   ],
+   [
+    1,
+    35
+   ]
+  ],
+  "sig_acausal": [
+   [
+    0,
+    9
+   ],
+   [
+    0,
+    19
+   ],
+   [
+    1,
+    26
+   ],
+   [
+    1,
+    35
+   ],
+   [
+    1,
+    49
+   ]
+  ]
+ },
+ "sig_causal": {
+  "truth_kappa_negfrac": [
+   0.22413793103448276,
+   0.05475653305472801,
+   58
+  ],
+  "truth_LT_mm_quantiles": [
+   0.0143,
+   0.0209,
+   0.0413
+  ],
+  "sv_minus_truth_dist_mm_quantiles": [
+   0.03,
+   0.0526,
+   0.091
+  ],
+  "frac_SV_truth_matched": 0.13559322033898305,
+  "reco_kappa_negfrac_all": [
+   0.5677966101694916,
+   0.045603636828055016,
+   118
+  ],
+  "reco_kappa_negfrac_truthmatched": [
+   0.25,
+   0.10825317547305482,
+   16
+  ],
+  "nSV_per_signal_electron_mean": 3.3448275862068964
+ },
+ "sig_acausal": {
+  "truth_kappa_negfrac": [
+   0.7321428571428571,
+   0.059177350559500234,
+   56
+  ],
+  "truth_LT_mm_quantiles": [
+   0.009,
+   0.0168,
+   0.0327
+  ],
+  "sv_minus_truth_dist_mm_quantiles": [
+   0.0229,
+   0.0447,
+   0.0793
+  ],
+  "frac_SV_truth_matched": 0.16666666666666666,
+  "reco_kappa_negfrac_all": [
+   0.5138888888888888,
+   0.0416505884616819,
+   144
+  ],
+  "reco_kappa_negfrac_truthmatched": [
+   0.9166666666666666,
+   0.056416933365527513,
+   24
+  ],
+  "nSV_per_signal_electron_mean": 4.303571428571429
+ }
+}

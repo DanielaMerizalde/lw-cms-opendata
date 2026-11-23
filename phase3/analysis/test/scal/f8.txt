@@ -1,0 +1,1 @@
+root://eospublic.cern.ch//eos/opendata/cms/MonteCarlo2012/Summer12_DR53X/W2JetsToLNu_TuneZ2Star_8TeV-madgraph/AODSIM/PU_S10_START53_V19-v1/20000/1A08ADCE-C8E1-E211-ACE5-0026189438B8.root

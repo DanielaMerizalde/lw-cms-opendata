@@ -1,0 +1,22 @@
+set automatic_html_opening False
+set run_mode 2
+set nb_core 2
+set lhapdf_py3 /Users/danielamerizalde/Downloads/lee-wick/MG5_aMC_v3_8_1/bin/HEPTools/lhapdf6_py3/bin/lhapdf-config
+launch /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/generation/xsec/proc_full -n full_mstw08lo_rep0_M200_dynm1_sf1_etap1
+shower=OFF
+done
+set ebeam1 4000
+set ebeam2 4000
+set nevents 10000
+set use_syst False
+set MLW 200
+set WLW 7.28775e-12
+set etaLW 1
+set lwRep 0
+set scalefact 1.0
+set pdlabel lhapdf
+set lhaid 21000
+set fixed_ren_scale False
+set fixed_fac_scale False
+set dynamical_scale_choice -1
+done

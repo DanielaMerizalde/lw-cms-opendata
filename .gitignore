@@ -1,0 +1,37 @@
+# Sistema / Python
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Binarios y salidas pesadas (se regeneran con los scripts)
+*.root
+*.o
+*.so
+*.a
+*.log
+logs/
+logs_*/
+out/
+out_*/
+done/
+done_*/
+.lanzar.lock/
+
+# Áreas CMSSW: solo se versiona src/ (el resto es compilación)
+**/CMSSW_5_3_32/*
+!**/CMSSW_5_3_32/src/
+
+# Generación (MadGraph / Pythia): procesos y muestras
+generation/events/samples/
+**/PROC_*/
+generation/xsec/proc_*/
+
+# Señal en CMSSW: muestras HepMC, AOD, pileup y áreas de trabajo
+phase3/signal/aod/
+phase3/signal/hepmc_chunks*/
+phase3/signal/pu/
+phase3/signal/work/
+phase3/signal/state/
+phase3/signal/gen/samples*/

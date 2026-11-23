@@ -1,0 +1,9 @@
+# pp -> elw+ elw- , elw -> e Z , Z -> q q~ (incl. b) -- full decay-chain ME (spin correlations kept)
+set automatic_html_opening False
+import model /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/generation/events/mg5/ufo/LWElectron_UFO-lwcms
+# p: 4-flavour proton (u,d,s,c massless via restrict_lwcms; b massive -> not in p)
+define p = g u c d s u~ c~ d~ s~
+# hadronic Z decays INCLUDING b quarks: Z -> u u~, d d~, s s~, c c~, b b~ (BR(Z->had) incl. bb~)
+define qz = u c d s b u~ c~ d~ s~ b~
+generate p p > elw+ elw-, (elw+ > e+ z, z > qz qz), (elw- > e- z, z > qz qz)
+output /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/generation/events/mg5/PROC_lw_ejj -nojpeg

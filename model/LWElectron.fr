@@ -1,0 +1,135 @@
+(* ===================================================================== *)
+(*  LWElectron.fr  --  Lee-Wick electron extension of SM.fr (FeynRules)   *)
+(*                                                                       *)
+(*  Reproduction of J. Sanchez, ACI Av. Cienc. Ing. 15(1) 2780 (2023),   *)
+(*  Eq. (1), taken from Alvarez, Da Rold, Schat, Szynkman,               *)
+(*  JHEP 10 (2009) 023 [arXiv:0908.2446].                                *)
+(*                                                                       *)
+(*  Load together with SM.fr:  LoadModel[".../SM.fr", "LWElectron.fr"]   *)
+(*                                                                       *)
+(*  New field: elw  (LW electron, Dirac, Q=-1, mass MLW, width WLW,      *)
+(*             PDG 9000011, MG names elw-/elw+)                          *)
+(*                                                                       *)
+(*  lwRep switch: elw_R couples to Z with gZeR (lwRep=0, paper Eq.1      *)
+(*    literal) or gZeL (lwRep=1, vector-like doublet partner as in       *)
+(*    Alvarez et al. Eq.B1/Eq.7 and LWSM 0704.1845 Eq.54).               *)
+(*  MeLW (default 5.0e-4 GeV): m_e in the mixing; 5.0e-4 reproduces     *)
+(*    the paper's Table 1 lambda; 5.11e-4 is the PDG value.             *)
+(*                                                                       *)
+(*  SIGN CONVENTIONS (see README.md):                                    *)
+(*   * SM.fr uses D_mu = d_mu - I g T.W - I g' Y B, which gives          *)
+(*       L_SM > + Z_mu [gZeL ebar_L g^mu e_L + gZeR ebar_R g^mu e_R]     *)
+(*     with gZeL = (g/cw)(-1/2+sw^2), gZeR = (g/cw) sw^2, i.e. the       *)
+(*     OPPOSITE overall sign to Eq.(1) of the paper. The paper's Eq.(1)  *)
+(*     is mapped onto the SM.fr convention by Z -> -Z (overall sign of   *)
+(*     every Z coupling flipped; relative signs preserved).              *)
+(*   * elw-elw-Z and elw-elw-A couplings carry the LW sign etaLW         *)
+(*     relative to the SM electron (etaLW = -1 reproduces Eq.(1)).       *)
+(*   * The mixing term of Eq.(1),  X - X^dagger  with                    *)
+(*     X = ebar_R g^mu elw_R, is anti-hermitian in a positive-norm       *)
+(*     QFT (it is hermitian only w.r.t. the LW indefinite metric).       *)
+(*     We implement the hermitian combination  X + X^dagger.             *)
+(*     LMixLiteral below keeps the literal form for CheckHermiticity.    *)
+(* ===================================================================== *)
+
+M$ModelName = "LWElectron";
+
+M$Information = {
+  Authors -> {"D. Merizalde (reproduction of J. Sanchez, ACI 15(1) 2780 (2023))"},
+  Version -> "1.0",
+  Date    -> "18.10.2026",
+  References -> {"J. Sanchez, ACI Av. Cienc. Ing. 15(1) 2780 (2023)",
+                 "E. Alvarez, L. Da Rold, C. Schat, A. Szynkman, JHEP 10 (2009) 023, arXiv:0908.2446"}
+};
+
+(* ---------------- new parameters ---------------- *)
+M$Parameters = {
+  MeLW == {
+    ParameterType -> External,
+    BlockName     -> LWINPUTS,
+    OrderBlock    -> 1,
+    Value         -> 5.0*^-4,
+    Description   -> "Electron mass entering the LW e-elw-Z mixing (kept nonzero; 5.0e-4 reproduces paper Table 1)"
+  },
+  etaLW == {
+    ParameterType -> External,
+    BlockName     -> LWINPUTS,
+    OrderBlock    -> 2,
+    Value         -> -1,
+    Description   -> "LW sign of elw-elw-gauge couplings relative to the SM electron (Eq.1: -1)"
+  },
+  lwRep == {
+    ParameterType -> External,
+    BlockName     -> LWINPUTS,
+    OrderBlock    -> 3,
+    Value         -> 0,
+    Description   -> "elw_R Z coupling: 0 = paper Eq.1 literal (gZeR); 1 = vector-like doublet partner (gZeL), Alvarez et al. Eq.B1"
+  },
+  gZeLLW == {
+    ParameterType    -> Internal,
+    Value            -> ee/(sw cw) (-1/2 + sw^2),
+    InteractionOrder -> {QED, 1},
+    Description      -> "gZ^{eL} = (g/cW)(-1/2+sW^2)"
+  },
+  gZeRLW == {
+    ParameterType    -> Internal,
+    Value            -> ee/(sw cw) sw^2,
+    InteractionOrder -> {QED, 1},
+    Description      -> "gZ^{eR} = (g/cW) sW^2"
+  },
+  gZltRLW == {
+    ParameterType    -> Internal,
+    Value            -> gZeRLW + lwRep (gZeLLW - gZeRLW),
+    InteractionOrder -> {QED, 1},
+    Description      -> "Z coupling of elw_R: gZeR (lwRep=0) or gZeL (lwRep=1)"
+  },
+  gMixLW == {
+    ParameterType    -> Internal,
+    Value            -> (gZeLLW - gZeRLW) MeLW/MLW,
+    InteractionOrder -> {QED, 1},
+    Description      -> "e-elw-Z mixing coupling (gZeL-gZeR) me/M = -(g/cW)(1/2)(me/M)"
+  }
+};
+
+(* ---------------- new particle ---------------- *)
+M$ClassesDescription = {
+  F[100] == {
+    ClassName        -> elw,
+    SelfConjugate    -> False,
+    Mass             -> {MLW, 200.},
+    Width            -> {WLW, 7.28775*^-12},  (* = computed width at MLW=200, MeLW=5e-4 *)
+    QuantumNumbers   -> {Q -> -1, LeptonNumber -> 1},
+    PropagatorLabel  -> "elw",
+    PropagatorType   -> Straight,
+    PropagatorArrow  -> Forward,
+    PDG              -> 9000011,
+    ParticleName     -> "elw-",
+    AntiParticleName -> "elw+",
+    FullName         -> "Lee-Wick electron"
+  }
+};
+
+(* ---------------- Lagrangian ---------------- *)
+(* free part *)
+LLWKin := Block[{mu, s1, s2},
+  I elwbar[s1].Ga[mu, s1, s2].del[elw[s2], mu] - MLW elwbar[s1].elw[s1]];
+
+(* elw-elw-A and elw-elw-Z: SM-electron structure times etaLW.
+   SM.fr: L > -ee ebar g A e + Z (gZeL ebar_L g e_L + gZeR ebar_R g e_R)  *)
+LLWGauge := Block[{mu, s1, s2, s3},
+  etaLW ( - ee elwbar[s1].Ga[mu, s1, s2].elw[s2] A[mu]
+          + gZeLLW elwbar[s1].Ga[mu, s1, s2].ProjM[s2, s3].elw[s3] Z[mu]
+          + gZltRLW elwbar[s1].Ga[mu, s1, s2].ProjP[s2, s3].elw[s3] Z[mu] )];
+
+(* Mixing term of Eq.(1), mapped to the SM.fr sign (Z -> -Z):
+   literal (anti-hermitian) form, kept only for the hermiticity test *)
+LMixLiteral := Block[{mu, s1, s2, s3},
+  gMixLW Z[mu] ( lbar[s1, 1].Ga[mu, s1, s2].ProjP[s2, s3].elw[s3]
+               - elwbar[s1].Ga[mu, s1, s2].ProjP[s2, s3].l[s3, 1] )];
+
+(* hermitian form actually used in the model *)
+LMix := Block[{mu, s1, s2, s3},
+  gMixLW Z[mu] ( lbar[s1, 1].Ga[mu, s1, s2].ProjP[s2, s3].elw[s3]
+               + elwbar[s1].Ga[mu, s1, s2].ProjP[s2, s3].l[s3, 1] )];
+
+LLW := LLWKin + LLWGauge + LMix;

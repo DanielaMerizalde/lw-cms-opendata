@@ -1,0 +1,14 @@
+set automatic_html_opening False
+set run_mode 2
+set nb_core 8
+launch /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/generation/xsec/proc_full -n test
+shower=OFF
+done
+set ebeam1 4000
+set ebeam2 4000
+set nevents 10000
+set MLW 200
+set WLW 7.28775e-12
+set etaLW 1
+set lwRep 0
+done

@@ -1,0 +1,80 @@
+{
+ "data": {
+  "isData": 1,
+  "files": [
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012B/DoublePhoton/AOD/22Jan2013-v1/20001/36C1EC10-286D-E211-ABE0-003048678AC8.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012B/DoublePhoton/AOD/22Jan2013-v1/20000/0209D928-FC6C-E211-A875-0026189438A5.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012B/DoublePhoton/AOD/22Jan2013-v1/20001/847F9909-2F6E-E211-8749-002618943976.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012B/DoublePhoton/AOD/22Jan2013-v1/20000/C69E2E33-016D-E211-B2BD-0025905964BE.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012B/DoublePhoton/AOD/22Jan2013-v1/20000/F895B8F2-E36C-E211-AB90-002618943948.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012B/DoublePhoton/AOD/22Jan2013-v1/20000/907EC122-116D-E211-818C-003048678C26.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012B/DoublePhoton/AOD/22Jan2013-v1/20000/A6EDF135-4A6B-E211-BEB7-003048678B00.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012B/DoublePhoton/AOD/22Jan2013-v1/20000/580A8E06-086D-E211-B498-0026189438E8.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012B/DoublePhoton/AOD/22Jan2013-v1/20000/6C824618-5E6B-E211-AA1A-003048FFD796.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012B/DoublePhoton/AOD/22Jan2013-v1/20000/EC68C272-1A6D-E211-990C-002618943966.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012B/DoublePhoton/AOD/22Jan2013-v1/20000/9C5D232F-EF6C-E211-9D74-002618943829.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012B/DoublePhoton/AOD/22Jan2013-v1/20000/A48BAE57-1E6D-E211-A298-002618FDA277.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012B/DoublePhoton/AOD/22Jan2013-v1/20015/4682969C-1C6D-E211-9E1A-003048678E80.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012B/DoublePhoton/AOD/22Jan2013-v1/20000/0A41A6A5-A46C-E211-986C-002618943970.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012B/DoublePhoton/AOD/22Jan2013-v1/20001/7E0D1C45-356D-E211-B40B-002618943933.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012B/DoublePhoton/AOD/22Jan2013-v1/20001/48AC31AD-5C6E-E211-B94C-00304867C034.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30002/CEE68D35-4171-E211-85C4-002590596486.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30001/44B1D8E5-2371-E211-AB26-002618FDA210.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30000/D4B3CBA3-D170-E211-B3DF-0025905964A2.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30001/B4FDB5E7-EC70-E211-AC9E-002618943981.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30001/EE8C933B-2971-E211-96FF-002590596484.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30002/D8F84133-3771-E211-92F5-0025905938B4.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30001/90FFA3A1-1B71-E211-8FF3-003048FFD75C.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/20000/8C50B4FA-9770-E211-AEE6-0030486791F2.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30002/92DE170F-BD71-E211-8A25-003048678B12.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30000/D42DD843-9270-E211-A0DA-002618943884.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30002/E87AD856-3B71-E211-9773-003048678BAA.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30000/9C23076E-DA70-E211-8EF1-002618943904.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30002/7404DA42-3371-E211-8B95-0026189437F5.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30000/A41A771B-CD70-E211-8986-003048678ED4.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30001/64AAADD3-2471-E211-B208-0026189438C4.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30000/C2F0D9DF-A270-E211-BEC5-0026189438CF.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30000/CC864B78-A370-E211-AC71-002618FDA207.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30002/1889969A-3771-E211-AE70-002590596498.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30000/D0E222EA-9570-E211-BF02-00248C55CC7F.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30000/94E9D2CA-BC70-E211-9A4D-002618943958.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30001/042DF83C-FE70-E211-88BD-0026189438BC.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30002/48FD7C15-3271-E211-8D97-002354EF3BE0.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30001/D6A512C6-1E71-E211-8789-00304867BFF2.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30000/2ED98C56-DE70-E211-A396-002618943950.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30000/5C55675F-AB70-E211-84FD-002618943910.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/20000/A6A89C0C-C270-E211-B569-003048FFD75C.root",
+   "root://eospublic.cern.ch//eos/opendata/cms/Run2012C/DoublePhoton/AOD/22Jan2013-v2/30000/B6E0F1B1-A770-E211-94E6-003048FFCB96.root"
+  ]
+ },
+ "DY": {
+  "isData": 0,
+  "files": [
+   "root://eospublic.cern.ch//eos/opendata/cms/MonteCarlo2012/Summer12_DR53X/DYJetsToLL_M-50_TuneZ2Star_8TeV-madgraph-tarball/AODSIM/PU_RD1_START53_V7N-v1/20000/003063B7-4CCF-E211-9FED-003048D46124.root"
+  ]
+ },
+ "TT": {
+  "isData": 0,
+  "files": [
+   "root://eospublic.cern.ch//eos/opendata/cms/MonteCarlo2012/Summer12_DR53X/TTbar_8TeV-Madspin_aMCatNLO-herwig/AODSIM/PU_S10_START53_V19-v2/00000/000A9D3F-CE4C-E311-84F8-001E673969D2.root"
+  ]
+ },
+ "W1": {
+  "isData": 0,
+  "files": [
+   "root://eospublic.cern.ch//eos/opendata/cms/MonteCarlo2012/Summer12_DR53X/W1JetsToLNu_TuneZ2Star_8TeV-madgraph/AODSIM/PU_S10_START53_V19-v1/10000/0015CDEA-C2E0-E211-836E-1CC1DE1D036C.root"
+  ]
+ },
+ "W2": {
+  "isData": 0,
+  "files": [
+   "root://eospublic.cern.ch//eos/opendata/cms/MonteCarlo2012/Summer12_DR53X/W2JetsToLNu_TuneZ2Star_8TeV-madgraph/AODSIM/PU_S10_START53_V19-v1/20000/0053F146-74E4-E211-9EFF-00261894398B.root"
+  ]
+ },
+ "W3": {
+  "isData": 0,
+  "files": [
+   "root://eospublic.cern.ch//eos/opendata/cms/MonteCarlo2012/Summer12_DR53X/W3JetsToLNu_TuneZ2Star_8TeV-madgraph/AODSIM/PU_S10_START53_V19-v1/10000/002A0367-3DEF-E211-827B-0030487D7B79.root"
+  ]
+ }
+}

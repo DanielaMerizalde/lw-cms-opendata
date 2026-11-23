@@ -1,0 +1,33 @@
+<use name="FWCore/Framework"/>
+<use name="FWCore/PluginManager"/>
+<use name="FWCore/ParameterSet"/>
+<use name="FWCore/ServiceRegistry"/>
+<use name="FWCore/Common"/>
+<use name="CommonTools/UtilAlgos"/>
+<use name="DataFormats/Common"/>
+<use name="DataFormats/HLTReco"/>
+<use name="HLTrigger/HLTcore"/>
+<use name="DataFormats/EgammaCandidates"/>
+<use name="RecoEgamma/EgammaTools"/>
+<use name="DataFormats/GsfTrackReco"/>
+<use name="DataFormats/TrackReco"/>
+<use name="DataFormats/JetReco"/>
+<use name="DataFormats/ParticleFlowCandidate"/>
+<use name="DataFormats/VertexReco"/>
+<use name="DataFormats/BeamSpot"/>
+<use name="DataFormats/HepMCCandidate"/>
+<use name="DataFormats/Math"/>
+<use name="SimDataFormats/GeneratorProducts"/>
+<use name="SimDataFormats/PileupSummaryInfo"/>
+<use name="JetMETCorrections/Objects"/>
+<use name="TrackingTools/TransientTrack"/>
+<use name="MagneticField/Engine"/>
+<use name="MagneticField/Records"/>
+<use name="TrackingTools/IPTools"/>
+<use name="RecoVertex/KalmanVertexFit"/>
+<use name="RecoVertex/VertexPrimitives"/>
+<use name="RecoVertex/VertexTools"/>
+<use name="root"/>
+<library file="WDVQCDAnalyzer.cc" name="LWQCDWDVQCDPlugin">
+  <flags EDM_PLUGIN="1"/>
+</library>

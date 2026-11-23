@@ -1,0 +1,4 @@
+set automatic_html_opening False
+import model /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/model/LWElectron_UFO
+generate p p > elw+ elw-, (elw+ > e+ z, z > j j), (elw- > e- z, z > j j)
+output /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/generation/xsec/proc_chainjj -f

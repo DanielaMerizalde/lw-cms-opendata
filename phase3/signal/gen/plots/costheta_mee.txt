@@ -1,0 +1,1 @@
+<cos^2 theta*> zonly=0.4014 gZ=0.3622  KS D=0.047 p=0.00073 | <m_ee> zonly=642.1 gZ=567.2 KS D=0.216 p=3.8e-75 | <cos theta*> zonly=-0.0217 gZ=0.0011

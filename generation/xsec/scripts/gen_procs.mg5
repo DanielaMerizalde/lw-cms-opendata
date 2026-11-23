@@ -1,0 +1,12 @@
+set automatic_html_opening False
+import model /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/model/LWElectron_UFO
+display multiparticles
+generate p p > elw+ elw-
+output /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/generation/xsec/proc_full -f
+generate p p > a > elw+ elw-
+output /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/generation/xsec/proc_aonly -f
+generate p p > z > elw+ elw-
+output /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/generation/xsec/proc_zonly -f
+define p5 = p b b~
+generate p5 p5 > elw+ elw-
+output /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/generation/xsec/proc_full5f -f

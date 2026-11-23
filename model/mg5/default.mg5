@@ -1,0 +1,4 @@
+set automatic_html_opening False
+import model /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/model/LWElectron_UFO
+display interactions elw-
+compute_widths elw- --body_decay=2 --output=/Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/model/mg5/param_card_default.dat

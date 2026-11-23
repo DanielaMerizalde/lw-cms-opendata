@@ -1,0 +1,6 @@
+# Phase 3A: inclusive Z-only cross-section check (paper Table 1: 5.97 fb at M=200)
+set automatic_html_opening False
+import model /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/phase3/signal/mg5/ufo/LWElectron_UFO-lwcms
+define p = g u c d s u~ c~ d~ s~
+generate p p > z > elw+ elw-
+output /Users/danielamerizalde/Downloads/lee-wick/lw-cms-opendata/phase3/signal/mg5/PROC_lw_zonly_incl -nojpeg
